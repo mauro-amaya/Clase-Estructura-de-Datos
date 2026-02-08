@@ -1,0 +1,30 @@
+#include  <iostream>
+#include <array>
+using namespace std;
+
+int main() {
+	int const empleados = 5;
+	int venta, total;
+	array<int, empleados> salarios;
+
+	for (int i = 0; salarios.size() - 1;i++) {
+		cout << "Ingrese la venta semanal del empleado " << i + 1<< ":"<< endl;
+		cin >> venta;
+		total = 200 + (venta * 9/100);
+		salarios[i] = total;
+		}
+	int contador, rangoMin, rangoMax;
+	cout << "Ingrese el rango minimo: ";
+	cin >> rangoMin;
+	cout << "Ingrese el rango maximo: ";
+	cin >> rangoMax;
+	contador = 0;
+	for (int i = 0; salarios.size() - 1; i++) {
+		if (salarios[i] >= rangoMin && salarios[i] <= rangoMax) {
+			contador++;
+		}
+		cout << "Hay" << contador << "empleados en el rango seleccionado.";
+	}
+	
+	
+}

@@ -1,0 +1,55 @@
+
+#include <iostream>
+#include <array>
+using namespace std;
+
+int main() {
+    //variables
+    int num = 0;
+    bool duplicado = false;
+    int const elementos = 5;
+    int numeros[elementos];
+
+    //inicializar el arreglo con ceros
+    for (int i = 0; i < elementos; i++) {
+        numeros[i] = 0;
+    }
+
+    for (int i = 0; i < elementos; i++) {
+        // reiniciar en cada iteración
+
+        cout << "Ingrese un numero entre 10 y 100: ";
+        cin >> num;
+
+        //validacion inicial
+        if (num >= 10 && num <= 100) {
+            //verificar duplicados
+            for (int j = 0; j < elementos; j++) { // usar j en el bucle interno
+                if (num == numeros[j]) {
+                    duplicado = true;
+                }
+            }
+            //guardar numero si no esta duplicado
+            if (!duplicado) {
+                numeros[i] = num;
+            }
+            else {
+                cout << "El numero esta duplicado, no se guardo." << endl;
+                i--; // retroceder índice para que el usuario vuelva a ingresar
+            }
+        }else {
+            cout << "El numero ingresado no es valido, no se guardo" << endl;
+        }
+    }
+
+
+    // Mostrar los números guardados
+    cout << "Numeros guardados: ";
+    for (int i = 0; i < elementos; i++) {
+        cout << numeros[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
